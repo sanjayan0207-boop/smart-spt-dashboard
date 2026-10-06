@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Smart SPT Logger</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
+            font-family: Arial, sans-serif;
             background: #f2f2f2;
         }
 
@@ -16,34 +21,58 @@
             background: #222;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 16px;
         }
 
         .container {
-            max-width: 800px;
+            width: 90%;
+            max-width: 900px;
             margin: 30px auto;
-            padding: 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 25px;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
         .card {
             background: white;
+            min-height: 150px;
             padding: 25px;
+            border-radius: 12px;
             text-align: center;
-            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .card h3 {
+            margin: 0 0 15px 0;
             color: #555;
+            font-size: 18px;
         }
 
         .value {
-            font-size: 30px;
+            font-size: 32px;
             font-weight: bold;
         }
 
@@ -52,14 +81,33 @@
         }
 
         .status {
-            background: white;
             margin-top: 20px;
-            padding: 20px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
-            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+        }
+
+        .status h3 {
+            margin-top: 0;
+            color: #555;
+        }
+
+        .status-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #777;
         }
 
         @media (max-width: 600px) {
+
             .cards {
                 grid-template-columns: 1fr;
             }
@@ -67,6 +115,7 @@
             .nvalue {
                 grid-column: 1;
             }
+
         }
     </style>
 </head>
@@ -74,46 +123,97 @@
 <body>
 
     <div class="header">
+
         <h1>SMART SPT LOGGER</h1>
-        <p>Digital Standard Penetration Test Monitoring System</p>
+
+        <p>
+            Digital Standard Penetration Test Monitoring System
+        </p>
+
     </div>
+
 
     <div class="container">
 
-        <h2>SPT Test Results</h2>
+        <h2 class="title">
+            SPT Test Results
+        </h2>
+
 
         <div class="cards">
 
             <div class="card">
+
                 <h3>Depth</h3>
-                <div class="value">45 cm</div>
+
+                <div class="value">
+                    45 cm
+                </div>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Hammer Blow Count</h3>
-                <div class="value">15</div>
+
+                <div class="value">
+                    15
+                </div>
+
             </div>
 
+
             <div class="card">
+
                 <h3>N1</h3>
-                <div class="value">5</div>
+
+                <div class="value">
+                    5
+                </div>
+
             </div>
 
+
             <div class="card">
+
                 <h3>N2</h3>
-                <div class="value">7</div>
+
+                <div class="value">
+                    7
+                </div>
+
             </div>
+
 
             <div class="card nvalue">
+
                 <h3>SPT N-Value</h3>
-                <div class="value">12</div>
+
+                <div class="value">
+                    12
+                </div>
+
             </div>
 
         </div>
 
+
         <div class="status">
+
             <h3>Test Status</h3>
-            <div class="value">TEST COMPLETED</div>
+
+            <div class="status-value">
+                TEST COMPLETED
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+
+            Smart SPT Logger | Engineering Design Project
+
         </div>
 
     </div>
