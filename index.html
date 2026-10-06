@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,12 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f2f2f2;
+            background: #f2f5f8;
+            color: #222;
         }
 
         .header {
-            background: #222;
+            background: #1f4e79;
             color: white;
             text-align: center;
             padding: 30px 20px;
@@ -30,19 +31,23 @@
         }
 
         .header p {
-            margin-top: 10px;
-            font-size: 16px;
+            margin: 10px 0 0;
+            font-size: 17px;
         }
 
         .container {
             width: 90%;
             max-width: 900px;
             margin: 30px auto;
+            padding: 20px;
         }
 
         .title {
             text-align: center;
-            margin-bottom: 25px;
+            display: block;
+            width: 100%;
+            margin: 0 0 25px 0;
+            font-size: 26px;
         }
 
         .cards {
@@ -57,7 +62,8 @@
             padding: 25px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
 
             display: flex;
             flex-direction: column;
@@ -67,43 +73,47 @@
 
         .card h3 {
             margin: 0 0 15px 0;
-            color: #555;
             font-size: 18px;
+            color: #555;
         }
 
         .value {
             font-size: 32px;
             font-weight: bold;
+            color: #1f4e79;
+        }
+
+        .unit {
+            font-size: 16px;
+            color: #777;
+            margin-top: 5px;
         }
 
         .nvalue {
             grid-column: 1 / 3;
         }
 
+        .nvalue .value {
+            font-size: 42px;
+        }
+
         .status {
-            margin-top: 20px;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
+            margin-top: 25px;
+            background: #dff0d8;
+            color: #286528;
+            padding: 15px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
-        }
-
-        .status h3 {
-            margin-top: 0;
-            color: #555;
-        }
-
-        .status-value {
-            font-size: 24px;
             font-weight: bold;
+            font-size: 18px;
         }
 
         .footer {
             text-align: center;
+            padding: 25px;
             margin-top: 30px;
-            padding: 20px;
-            color: #777;
+            color: #666;
+            font-size: 14px;
         }
 
         @media (max-width: 600px) {
@@ -116,6 +126,13 @@
                 grid-column: 1;
             }
 
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .title {
+                font-size: 23px;
+            }
         }
     </style>
 </head>
@@ -123,99 +140,56 @@
 <body>
 
     <div class="header">
-
-        <h1>SMART SPT LOGGER</h1>
-
-        <p>
-            Digital Standard Penetration Test Monitoring System
-        </p>
-
+        <h1>Smart SPT Logger</h1>
+        <p>Automated Standard Penetration Test Monitoring System</p>
     </div>
-
 
     <div class="container">
 
-        <h2 class="title">
-            SPT Test Results
-        </h2>
-
+        <h2 class="title">SPT Test Results</h2>
 
         <div class="cards">
 
             <div class="card">
-
                 <h3>Depth</h3>
-
-                <div class="value">
-                    45 cm
-                </div>
-
+                <div class="value">45</div>
+                <div class="unit">cm</div>
             </div>
 
-
             <div class="card">
-
-                <h3>Hammer Blow Count</h3>
-
-                <div class="value">
-                    15
-                </div>
-
+                <h3>Blow Count</h3>
+                <div class="value">15</div>
+                <div class="unit">blows</div>
             </div>
 
-
             <div class="card">
-
                 <h3>N1</h3>
-
-                <div class="value">
-                    5
-                </div>
-
+                <div class="value">5</div>
+                <div class="unit">blows</div>
             </div>
-
 
             <div class="card">
-
                 <h3>N2</h3>
-
-                <div class="value">
-                    7
-                </div>
-
+                <div class="value">7</div>
+                <div class="unit">blows</div>
             </div>
-
 
             <div class="card nvalue">
-
                 <h3>SPT N-Value</h3>
-
-                <div class="value">
-                    12
-                </div>
-
+                <div class="value">12</div>
+                <div class="unit">blows / 30 cm</div>
             </div>
 
         </div>
-
 
         <div class="status">
-
-            <h3>Test Status</h3>
-
-            <div class="status-value">
-                TEST COMPLETED
-            </div>
-
+            TEST COMPLETED
         </div>
 
+    </div>
 
-        <div class="footer">
-
-            Smart SPT Logger | Engineering Design Project
-
-        </div>
-
+    <div class="footer">
+        Smart SPT Logger | Mining Engineering Design Project
     </div>
 
 </body>
