@@ -117,7 +117,6 @@
         }
 
         @media (max-width: 600px) {
-
             .cards {
                 grid-template-columns: 1fr;
             }
@@ -152,38 +151,38 @@
 
             <div class="card">
                 <h3>Depth</h3>
-                <div class="value">45</div>
+                <div class="value" id="depth">--</div>
                 <div class="unit">cm</div>
             </div>
 
             <div class="card">
                 <h3>Blow Count</h3>
-                <div class="value">15</div>
+                <div class="value" id="blows">--</div>
                 <div class="unit">blows</div>
             </div>
 
             <div class="card">
                 <h3>N1</h3>
-                <div class="value">5</div>
+                <div class="value" id="n1">--</div>
                 <div class="unit">blows</div>
             </div>
 
             <div class="card">
                 <h3>N2</h3>
-                <div class="value">7</div>
+                <div class="value" id="n2">--</div>
                 <div class="unit">blows</div>
             </div>
 
             <div class="card nvalue">
                 <h3>SPT N-Value</h3>
-                <div class="value">12</div>
+                <div class="value" id="nvalue">--</div>
                 <div class="unit">blows / 30 cm</div>
             </div>
 
         </div>
 
-        <div class="status">
-            TEST COMPLETED
+        <div class="status" id="status">
+            CONNECTING...
         </div>
 
     </div>
@@ -191,6 +190,127 @@
     <div class="footer">
         Smart SPT Logger | Mining Engineering Design Project
     </div>
+
+
+    <script>
+
+        // ==========================================
+        // PUT YOUR BLYNK AUTH TOKEN HERE
+        // ==========================================
+
+        const BLYNK_TOKEN = "txBNNxiUObwcaQVm-tDkDCBwLZDa2oKI";
+
+
+        // ==========================================
+        // BLYNK API FUNCTION
+        // ==========================================
+
+        async function getBlynkValue(pin) {
+
+            const url =
+                "https://blynk.cloud/external/api/get?token="
+                + BLYNK_TOKEN
+                + "&v"
+                + pin;
+
+            try {
+
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error("Blynk connection error");
+                }
+
+                const value = await response.text();
+
+                return value;
+
+            } catch (error) {
+
+                console.log(error);
+
+                return null;
+            }
+        }
+
+
+        // ==========================================
+        // UPDATE DASHBOARD
+        // ==========================================
+
+        async function updateDashboard() {
+
+            const depth = await getBlynkValue(0);
+            const blows = await getBlynkValue(1);
+            const n1 = await getBlynkValue(2);
+            const n2 = await getBlynkValue(3);
+            const nvalue = await getBlynkValue(4);
+            const status = await getBlynkValue(5);
+
+
+            // Depth
+            if (depth !== null) {
+                document.getElementById("depth").innerText = depth;
+            }
+
+
+            // Blow Count
+            if (blows !== null) {
+                document.getElementById("blows").innerText = blows;
+            }
+
+
+            // N1
+            if (n1 !== null) {
+                document.getElementById("n1").innerText = n1;
+            }
+
+
+            // N2
+            if (n2 !== null) {
+                document.getElementById("n2").innerText = n2;
+            }
+
+
+            // N-value
+            if (nvalue !== null) {
+                document.getElementById("nvalue").innerText = nvalue;
+            }
+
+
+            // Status
+            if (status !== null) {
+                document.getElementById("status").innerText = status;
+
+                if (status.toUpperCase().includes("COMPLETED")) {
+
+                    document.getElementById("status").style.background =
+                        "#dff0d8";
+
+                    document.getElementById("status").style.color =
+                        "#286528";
+
+                } else {
+
+                    document.getElementById("status").style.background =
+                        "#fff3cd";
+
+                    document.getElementById("status").style.color =
+                        "#856404";
+                }
+            }
+        }
+
+
+        // ==========================================
+        // UPDATE EVERY 2 SECONDS
+        // ==========================================
+
+        updateDashboard();
+
+        setInterval(updateDashboard, 2000);
+
+    </script>
 
 </body>
 </html>
