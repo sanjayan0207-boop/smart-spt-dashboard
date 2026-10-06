@@ -1,26 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Smart SPT Logger</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart SPT Logger</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    color: #222;
+}
+
+.header {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.header p {
+    margin: 8px 0 0;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+
+.card h3 {
+    margin: 0 0 12px;
+    font-size: 17px;
+    color: #555;
+}
+
+.value {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.nvalue {
+    grid-column: span 2;
+}
+
+.status {
+    margin-top: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+
+.status-text {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 35px;
+    padding: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+    .results {
+        grid-template-columns: 1fr;
+    }
+
+    .nvalue {
+        grid-column: span 1;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
+<div class="header">
+
     <h1>SMART SPT LOGGER</h1>
 
-    <p>Real-Time SPT Monitoring System</p>
+    <p>Digital Standard Penetration Test Monitoring System</p>
 
-    <hr>
+</div>
 
-    <h2>SPT Test Results</h2>
 
-    <p><b>Depth:</b> 45 cm</p>
-    <p><b>Blow Count:</b> 15</p>
-    <p><b>N1:</b> 5</p>
-    <p><b>N2:</b> 7</p>
-    <p><b>SPT N-value:</b> 12</p>
+<div class="container">
 
-    <h3>Status: TEST COMPLETED</h3>
+    <h2 class="section-title">SPT Test Results</h2>
+
+
+    <div class="results">
+
+
+        <div class="card">
+
+            <h3>Depth</h3>
+
+            <div class="value">
+                45 cm
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Hammer Blow Count</h3>
+
+            <div class="value">
+                15
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>N1</h3>
+
+            <div class="value">
+                5
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>N2</h3>
+
+            <div class="value">
+                7
+            </div>
+
+        </div>
+
+
+        <div class="card nvalue">
+
+            <h3>SPT N-Value</h3>
+
+            <div class="value">
+                12
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="status">
+
+        <div>Test Status</div>
+
+        <div class="status-text">
+            TEST COMPLETED
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        Smart SPT Logger | Engineering Design Project
+
+    </div>
+
+</div>
 
 </body>
 </html>
