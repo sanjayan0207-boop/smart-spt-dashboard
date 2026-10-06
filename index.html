@@ -3,7 +3,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,307 +10,204 @@
 
     <style>
 
-        * {
-            box-sizing: border-box;
-        }
-
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: #f2f5f8;
-            color: #222;
-        }
-
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        .header {
-            background: #1f4e79;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .header h1 {
+            background: #f4f6f8;
             margin: 0;
-            font-size: 32px;
+            padding: 0;
         }
 
-        .header p {
-            margin: 10px 0 0;
-            font-size: 17px;
+        header {
+            background: #1f4e78;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
 
-        /* =========================
-           CONTAINER
-        ========================= */
+        header p {
+            margin: 8px 0 0;
+        }
 
         .container {
-            width: 92%;
-            max-width: 1100px;
-            margin: 30px auto;
+            width: 95%;
+            max-width: 1200px;
+            margin: 25px auto;
         }
 
-
-        /* =========================
-           SECTION TITLES
-        ========================= */
-
-        .section-title {
-            text-align: center;
-            margin: 40px 0 20px;
-            font-size: 26px;
-        }
-
-
-        /* =========================
-           BOREHOLE INPUT
-        ========================= */
-
-        .input-container {
+        .section {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
+
+        h2 {
+            color: #1f4e78;
+            margin-top: 0;
+        }
+
+        /* BOREHOLE INFORMATION */
 
         .input-table {
             width: 100%;
             border-collapse: collapse;
         }
 
-        .input-table th {
-            background: #1f4e79;
-            color: white;
-            padding: 14px;
-            text-align: center;
-        }
-
+        .input-table th,
         .input-table td {
+            border: 1px solid #ccc;
             padding: 12px;
             text-align: center;
-            border-bottom: 1px solid #ddd;
         }
 
-        .input-table input {
+        .input-table th {
+            background: #1f4e78;
+            color: white;
+        }
+
+        input {
             width: 90%;
             padding: 10px;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-            font-size: 16px;
-            text-align: center;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 15px;
         }
 
+        /* BUTTONS */
 
-        /* =========================
-           START BUTTON
-        ========================= */
-
-        .start-button {
-            background: #1f4e79;
-            color: white;
+        button {
+            padding: 11px 18px;
             border: none;
-            padding: 12px 25px;
-            border-radius: 7px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 15px;
+            margin: 5px;
         }
 
-        .start-button:hover {
-            background: #163a5c;
+        .start-btn {
+            background: #28a745;
+            color: white;
         }
 
+        .download-btn {
+            background: #007bff;
+            color: white;
+        }
 
-        /* =========================
-           CURRENT BOREHOLE
-        ========================= */
+        .clear-btn {
+            background: #dc3545;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        /* CURRENT BOREHOLE */
 
         .current-borehole {
-            margin-top: 15px;
-            padding: 12px;
             background: #e8f1f8;
+            padding: 15px;
             border-radius: 8px;
-            text-align: center;
+            font-size: 18px;
             font-weight: bold;
-            color: #1f4e79;
         }
 
+        /* LIVE DASHBOARD */
 
-        /* =========================
-           LIVE CARDS
-        ========================= */
-
-        .cards {
+        .dashboard {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
         }
 
         .card {
-            background: white;
-            min-height: 150px;
-            padding: 25px;
-            border-radius: 12px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
 
         .card h3 {
-            margin: 0 0 15px;
-            font-size: 18px;
+            margin: 0;
             color: #555;
+            font-size: 16px;
         }
 
         .value {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: bold;
-            color: #1f4e79;
+            margin-top: 10px;
+            color: #1f4e78;
         }
 
-        .unit {
-            font-size: 16px;
-            color: #777;
-            margin-top: 5px;
-        }
+        /* STATUS */
 
-        .nvalue {
-            grid-column: 1 / 3;
-        }
-
-        .nvalue .value {
-            font-size: 42px;
-        }
-
-
-        /* =========================
-           STATUS
-        ========================= */
-
-        .status {
-            margin-top: 25px;
+        #status {
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
             background: #fff3cd;
             color: #856404;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
             font-weight: bold;
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           HISTORY TABLE
-        ========================= */
-
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
-        }
-
-        .result-table {
-            width: 100%;
-            min-width: 850px;
-            border-collapse: collapse;
-        }
-
-        .result-table th {
-            background: #1f4e79;
-            color: white;
-            padding: 14px 10px;
-            text-align: center;
-        }
-
-        .result-table td {
-            padding: 13px 10px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .result-table tr:nth-child(even) {
-            background: #f7f9fb;
-        }
-
-        .completed {
-            color: #286528;
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           BUTTONS
-        ========================= */
-
-        .buttons {
-            text-align: center;
             margin-top: 20px;
         }
 
-        button {
-            border: none;
-            padding: 12px 20px;
-            margin: 5px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: bold;
+        /* HISTORY TABLE */
+
+        .history-container {
+            overflow-x: auto;
         }
 
-        .download {
-            background: #1f4e79;
-            color: white;
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
         }
 
-        .clear {
-            background: #c0392b;
-            color: white;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        .footer {
+        .history-table th,
+        .history-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
             text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-            color: #666;
-            font-size: 14px;
         }
 
+        .history-table th {
+            background: #1f4e78;
+            color: white;
+        }
 
-        /* =========================
-           MOBILE
-        ========================= */
+        .history-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
 
-        @media (max-width: 600px) {
+        .empty-message {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
 
-            .cards {
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        @media (max-width: 700px) {
+
+            .dashboard {
                 grid-template-columns: 1fr;
             }
 
-            .nvalue {
-                grid-column: 1;
-            }
-
-            .header h1 {
-                font-size: 26px;
-            }
-
-            .section-title {
-                font-size: 23px;
+            .container {
+                width: 92%;
             }
 
         }
@@ -320,337 +216,261 @@
 
 </head>
 
-
 <body>
 
+<header>
 
-    <!-- ==================================================
-         HEADER
-    =================================================== -->
+    <h1>Smart SPT Logger</h1>
 
-    <div class="header">
+    <p>
+        Automated Standard Penetration Test Monitoring System
+    </p>
 
-        <h1>
-            Smart SPT Logger
-        </h1>
+</header>
 
-        <p>
-            Automated Standard Penetration Test Monitoring System
-        </p>
+
+<div class="container">
+
+
+    <!-- ================================================= -->
+    <!-- BOREHOLE INFORMATION -->
+    <!-- ================================================= -->
+
+    <div class="section">
+
+        <h2>Bore Hole Information</h2>
+
+        <table class="input-table">
+
+            <tr>
+
+                <th>Bore Hole ID</th>
+
+                <th>Bore Hole Depth</th>
+
+                <th>Action</th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+
+                    <input
+                        type="text"
+                        id="boreholeID"
+                        placeholder="Example: BH-01"
+                    >
+
+                </td>
+
+                <td>
+
+                    <input
+                        type="text"
+                        id="boreholeDepth"
+                        placeholder="Example: 1 m"
+                    >
+
+                </td>
+
+                <td>
+
+                    <button
+                        class="start-btn"
+                        onclick="startTest()"
+                    >
+
+                        Start SPT Test
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </table>
 
     </div>
 
 
+    <!-- ================================================= -->
+    <!-- CURRENT BOREHOLE -->
+    <!-- ================================================= -->
 
-    <div class="container">
+    <div class="section">
 
+        <h2>Current Bore Hole</h2>
 
-        <!-- ==================================================
-             1. BOREHOLE INFORMATION
-        =================================================== -->
+        <div
+            class="current-borehole"
+            id="currentBorehole"
+        >
 
-        <h2 class="section-title">
-            Borehole Information
-        </h2>
-
-
-        <div class="input-container">
-
-            <table class="input-table">
-
-                <thead>
-
-                    <tr>
-
-                        <th>
-                            Bore Hole ID
-                        </th>
-
-                        <th>
-                            Bore Hole Depth
-                        </th>
-
-                        <th>
-                            Action
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody>
-
-                    <tr>
-
-                        <td>
-
-                            <input
-                                type="text"
-                                id="boreholeID"
-                                placeholder="Example: BH-01"
-                            >
-
-                        </td>
-
-
-                        <td>
-
-                            <input
-                                type="number"
-                                id="boreholeDepth"
-                                placeholder="Example: 10"
-                                min="0"
-                                step="0.1"
-                            >
-
-                            m
-
-                        </td>
-
-
-                        <td>
-
-                            <button
-                                class="start-button"
-                                onclick="startTest()"
-                            >
-
-                                Start SPT Test
-
-                            </button>
-
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-
-            <div
-                class="current-borehole"
-                id="currentBorehole"
-            >
-
-                No borehole selected
-
-            </div>
+            No borehole selected
 
         </div>
 
+    </div>
 
 
-        <!-- ==================================================
-             2. LIVE SPT RESULTS
-        =================================================== -->
+    <!-- ================================================= -->
+    <!-- LIVE SPT RESULTS -->
+    <!-- ================================================= -->
 
-        <h2 class="section-title">
-            Live SPT Test Results
-        </h2>
+    <div class="section">
 
+        <h2>Live SPT Test Results</h2>
 
-        <div class="cards">
+        <div class="dashboard">
 
-
-            <!-- DEPTH -->
 
             <div class="card">
 
-                <h3>
-                    SPT Depth
-                </h3>
+                <h3>Depth</h3>
 
                 <div
                     class="value"
                     id="depth"
                 >
 
-                    --
+                    0 cm
 
-                </div>
-
-                <div class="unit">
-                    cm
                 </div>
 
             </div>
 
 
-
-            <!-- BLOW COUNT -->
-
             <div class="card">
 
-                <h3>
-                    Blow Count
-                </h3>
+                <h3>Blow Count</h3>
 
                 <div
                     class="value"
                     id="blows"
                 >
 
-                    --
+                    0
 
-                </div>
-
-                <div class="unit">
-                    blows
                 </div>
 
             </div>
 
 
-
-            <!-- N1 -->
-
             <div class="card">
 
-                <h3>
-                    N1
-                </h3>
+                <h3>N1</h3>
 
                 <div
                     class="value"
                     id="n1"
                 >
 
-                    --
+                    0
 
-                </div>
-
-                <div class="unit">
-                    blows
                 </div>
 
             </div>
 
 
-
-            <!-- N2 -->
-
             <div class="card">
 
-                <h3>
-                    N2
-                </h3>
+                <h3>N2</h3>
 
                 <div
                     class="value"
                     id="n2"
                 >
 
-                    --
+                    0
 
-                </div>
-
-                <div class="unit">
-                    blows
                 </div>
 
             </div>
 
 
+            <div class="card">
 
-            <!-- N VALUE -->
-
-            <div class="card nvalue">
-
-                <h3>
-                    SPT N-Value
-                </h3>
+                <h3>SPT N-Value</h3>
 
                 <div
                     class="value"
                     id="nvalue"
                 >
 
-                    --
+                    0
 
-                </div>
-
-                <div class="unit">
-                    blows / 30 cm
                 </div>
 
             </div>
 
+
+            <div class="card">
+
+                <h3>Connection</h3>
+
+                <div
+                    class="value"
+                    id="connection"
+                >
+
+                    --
+
+                </div>
+
+            </div>
+
+
         </div>
 
 
+        <div id="status">
 
-        <!-- ==================================================
-             STATUS
-        =================================================== -->
-
-        <div
-            class="status"
-            id="status"
-        >
-
-            CONNECTING...
+            WAITING FOR TEST
 
         </div>
 
+    </div>
 
 
-        <!-- ==================================================
-             3. SPT HISTORY
-        =================================================== -->
+    <!-- ================================================= -->
+    <!-- SPT TEST HISTORY -->
+    <!-- ================================================= -->
 
-        <h2 class="section-title">
-            SPT Test History
-        </h2>
+    <div class="section">
 
+        <h2>SPT Test History</h2>
 
-        <div class="table-container">
+        <div class="history-container">
 
-            <table class="result-table">
+            <table class="history-table">
 
                 <thead>
 
                     <tr>
 
-                        <th>
-                            Bore Hole Number
-                        </th>
+                        <th>Bore Hole Number</th>
 
-                        <th>
-                            Bore Hole Depth
-                        </th>
+                        <th>Bore Hole Depth</th>
 
-                        <th>
-                            SPT Depth
-                        </th>
+                        <th>SPT Depth</th>
 
-                        <th>
-                            Blow Count
-                        </th>
+                        <th>Blow Count</th>
 
-                        <th>
-                            N1
-                        </th>
+                        <th>N1</th>
 
-                        <th>
-                            N2
-                        </th>
+                        <th>N2</th>
 
-                        <th>
-                            N Value
-                        </th>
+                        <th>N Value</th>
 
-                        <th>
-                            Status
-                        </th>
+                        <th>Status</th>
 
                     </tr>
 
                 </thead>
 
-
                 <tbody id="testTableBody">
+
                 </tbody>
 
             </table>
@@ -658,1141 +478,1094 @@
         </div>
 
 
-
-        <!-- ==================================================
-             BUTTONS
-        =================================================== -->
-
-        <div class="buttons">
-
-            <button
-                class="download"
-                onclick="downloadCSV()"
-            >
-
-                Download Excel
-
-            </button>
+        <br>
 
 
-            <button
-                class="clear"
-                onclick="clearHistory()"
-            >
+        <button
+            class="download-btn"
+            onclick="downloadCSV()"
+        >
 
-                Clear History
+            Download Excel
 
-            </button>
+        </button>
 
-        </div>
+
+        <button
+            class="clear-btn"
+            onclick="clearHistory()"
+        >
+
+            Clear History
+
+        </button>
 
     </div>
 
 
+</div>
 
-    <!-- ==================================================
-         FOOTER
-    =================================================== -->
 
-    <div class="footer">
+<footer>
 
-        Smart SPT Logger |
-        Mining Engineering Design Project
+    Smart SPT Logger | Mining Engineering Project
 
-    </div>
+</footer>
 
 
+<script>
 
-    <script>
 
+/* ===================================================== */
+/* BLYNK SETTINGS */
+/* ===================================================== */
 
-        /* ==================================================
-           BLYNK TOKEN
-        ==================================================
+const BLYNK_TOKEN =
+    "txBNNxiUObwcaQVm-tDkDCBwLZDa2oKI";
 
-           IMPORTANT:
-           Put your REAL Blynk Auth Token below.
 
-           Do NOT send your token to anyone.
-        ================================================== */
+const BLYNK_SERVER =
+    "https://blynk.cloud/external/api/get";
 
-        const BLYNK_TOKEN =
-            "txBNNxiUObwcaQVm-tDkDCBwLZDa2oKI";
 
+/* ===================================================== */
+/* VARIABLES */
+/* ===================================================== */
 
-        /* ==================================================
-           BLYNK API SERVER
-        ================================================== */
+let currentBoreholeID =
+    localStorage.getItem("currentBoreholeID") || "";
 
-        const BLYNK_SERVER =
-            "https://blynk.cloud/external/api/get";
 
+let currentBoreholeDepth =
+    localStorage.getItem("currentBoreholeDepth") || "";
 
-        /* ==================================================
-           VARIABLES
-        ================================================== */
 
-        let currentBoreholeID =
-            localStorage.getItem(
-                "currentBoreholeID"
-            ) || "";
+let testHistory =
+    JSON.parse(
+        localStorage.getItem("sptHistory") || "[]"
+    );
 
 
-        let currentBoreholeDepth =
-            localStorage.getItem(
-                "currentBoreholeDepth"
-            ) || "";
+let lastSavedTest =
+    localStorage.getItem("lastSavedTest") || "";
 
 
-        let testHistory =
-            JSON.parse(
-                localStorage.getItem(
-                    "sptHistory"
-                ) || "[]"
-            );
+/*
+    IMPORTANT
 
+    This variable tells the webpage:
 
-        let lastSavedTest =
-            localStorage.getItem(
-                "lastSavedTest"
-            ) || "";
+    "The user has actually clicked
+     Start SPT Test."
 
+    Therefore an old TEST COMPLETED value
+    will NOT automatically be saved.
+*/
 
-        /*
-         * IMPORTANT:
-         * This controls whether a new test
-         * is allowed to be saved.
-         */
+let testStarted = false;
 
-        let testStarted = false;
 
+/* ===================================================== */
+/* DISPLAY CURRENT BOREHOLE */
+/* ===================================================== */
 
+function displayCurrentBorehole() {
 
-        /* ==================================================
-           DISPLAY CURRENT BOREHOLE
-        ================================================== */
+    const display =
+        document.getElementById("currentBorehole");
 
-        function displayCurrentBorehole() {
 
-            const display =
-                document.getElementById(
-                    "currentBorehole"
-                );
+    if (
+        currentBoreholeID !== "" &&
+        currentBoreholeDepth !== ""
+    ) {
 
+        display.innerText =
+            currentBoreholeID +
+            " | Bore Hole Depth: " +
+            currentBoreholeDepth;
 
-            if (
-                currentBoreholeID !== "" &&
-                currentBoreholeDepth !== ""
-            ) {
+    }
 
-                display.innerText =
-                    "Current Borehole: " +
-                    currentBoreholeID +
-                    " | Borehole Depth: " +
-                    currentBoreholeDepth +
-                    " m";
+    else {
 
-            } else {
+        display.innerText =
+            "No borehole selected";
 
-                display.innerText =
-                    "No borehole selected";
+    }
 
-            }
+}
 
-        }
 
+/* ===================================================== */
+/* START NEW SPT TEST */
+/* ===================================================== */
 
+function startTest() {
 
-        /* ==================================================
-           START SPT TEST
-        ================================================== */
 
-        function startTest() {
+    const boreholeID =
+        document
+        .getElementById("boreholeID")
+        .value
+        .trim();
 
-            const boreholeID =
-                document
-                    .getElementById(
-                        "boreholeID"
-                    )
-                    .value
-                    .trim();
 
+    const boreholeDepth =
+        document
+        .getElementById("boreholeDepth")
+        .value
+        .trim();
 
-            const boreholeDepth =
-                document
-                    .getElementById(
-                        "boreholeDepth"
-                    )
-                    .value
-                    .trim();
 
+    /* CHECK INPUT */
 
-            /* CHECK ID */
+    if (
+        boreholeID === "" ||
+        boreholeDepth === ""
+    ) {
 
-            if (
-                boreholeID === ""
-            ) {
+        alert(
+            "Please enter Bore Hole ID and Bore Hole Depth."
+        );
 
-                alert(
-                    "Please enter the Bore Hole ID."
-                );
+        return;
 
-                return;
-            }
+    }
 
 
-            /* CHECK DEPTH */
+    /*
+        SAVE NEW BOREHOLE INFORMATION
+    */
 
-            if (
-                boreholeDepth === "" ||
-                Number(boreholeDepth) <= 0
-            ) {
+    currentBoreholeID =
+        boreholeID;
 
-                alert(
-                    "Please enter the Bore Hole Depth."
-                );
 
-                return;
-            }
+    currentBoreholeDepth =
+        boreholeDepth;
 
 
-            /* SAVE BOREHOLE */
+    localStorage.setItem(
+        "currentBoreholeID",
+        currentBoreholeID
+    );
 
-            currentBoreholeID =
-                boreholeID;
 
+    localStorage.setItem(
+        "currentBoreholeDepth",
+        currentBoreholeDepth
+    );
 
-            currentBoreholeDepth =
-                boreholeDepth;
 
+    /*
+        VERY IMPORTANT:
 
-            localStorage.setItem(
-                "currentBoreholeID",
-                currentBoreholeID
-            );
+        Start a completely NEW test.
+    */
 
+    testStarted = true;
 
-            localStorage.setItem(
-                "currentBoreholeDepth",
-                currentBoreholeDepth
-            );
 
+    /*
+        Remove old duplicate protection
+        because this is a new test.
+    */
 
-            /*
-             * VERY IMPORTANT
-             *
-             * A NEW TEST IS NOW ACTIVE.
-             */
+    lastSavedTest = "";
 
-            testStarted = true;
 
+    localStorage.removeItem(
+        "lastSavedTest"
+    );
 
-            /*
-             * Allow one new result
-             * to be saved.
-             */
 
-            lastSavedTest = "";
+    /*
+        Display new borehole
+    */
 
+    displayCurrentBorehole();
 
-            localStorage.removeItem(
-                "lastSavedTest"
-            );
 
+    /*
+        Clear the old LIVE SCREEN.
 
-            /* DISPLAY */
+        This does NOT change Blynk.
+        It only clears the webpage display
+        until new values arrive.
+    */
 
-            displayCurrentBorehole();
+    document.getElementById("depth")
+        .innerText = "0 cm";
 
 
-            /* STATUS */
+    document.getElementById("blows")
+        .innerText = "0";
 
-            const statusBox =
-                document.getElementById(
-                    "status"
-                );
 
+    document.getElementById("n1")
+        .innerText = "0";
 
-            statusBox.innerText =
-                "SPT TEST STARTED - " +
-                currentBoreholeID;
 
+    document.getElementById("n2")
+        .innerText = "0";
 
-            statusBox.style.background =
-                "#d9edf7";
 
+    document.getElementById("nvalue")
+        .innerText = "0";
 
-            statusBox.style.color =
-                "#31708f";
 
+    document.getElementById("connection")
+        .innerText = "CONNECTING";
 
-            alert(
-                "SPT test started for " +
-                currentBoreholeID
-            );
 
-        }
+    /*
+        IMPORTANT:
 
+        We do NOT save anything here.
 
+        The test will only be saved when
+        Blynk reports TEST COMPLETED.
+    */
 
-        /* ==================================================
-           GET BLYNK VALUE
-        ================================================== */
+    document.getElementById("status")
+        .innerText =
+        "NEW SPT TEST STARTED - WAITING FOR DATA";
 
-        async function getBlynkValue(
-            pin
-        ) {
 
-            try {
+    document.getElementById("status")
+        .style.background =
+        "#d4edda";
 
-                const url =
-                    BLYNK_SERVER +
-                    "?token=" +
-                    encodeURIComponent(
-                        BLYNK_TOKEN
-                    ) +
-                    "&v" +
-                    pin;
 
+    document.getElementById("status")
+        .style.color =
+        "#155724";
 
-                const response =
-                    await fetch(
-                        url
-                    );
+}
 
 
-                if (
-                    !response.ok
-                ) {
+/* ===================================================== */
+/* GET BLYNK VALUE */
+/* ===================================================== */
 
-                    throw new Error(
-                        "Blynk HTTP error: " +
-                        response.status
-                    );
+async function getBlynkValue(pin) {
 
-                }
 
+    const url =
+        BLYNK_SERVER +
+        "?token=" +
+        encodeURIComponent(BLYNK_TOKEN) +
+        "&v" +
+        pin;
 
-                const value =
-                    await response.text();
 
+    try {
 
-                return value.trim();
+        const response =
+            await fetch(url);
 
-            } catch (error) {
 
-                console.log(
-                    "Blynk error:",
-                    error
-                );
+        if (!response.ok) {
 
-
-                return null;
-
-            }
-
-        }
-
-
-
-        /* ==================================================
-           DISPLAY HISTORY TABLE
-        ================================================== */
-
-        function displayTable() {
-
-            const tableBody =
-                document.getElementById(
-                    "testTableBody"
-                );
-
-
-            tableBody.innerHTML =
-                "";
-
-
-            testHistory.forEach(
-                function(test) {
-
-                    const row =
-                        document.createElement(
-                            "tr"
-                        );
-
-
-                    row.innerHTML =
-
-                        "<td>" +
-                        test.borehole +
-                        "</td>" +
-
-                        "<td>" +
-                        test.boreholeDepth +
-                        " m</td>" +
-
-                        "<td>" +
-                        test.sptDepth +
-                        " cm</td>" +
-
-                        "<td>" +
-                        test.blows +
-                        "</td>" +
-
-                        "<td>" +
-                        test.n1 +
-                        "</td>" +
-
-                        "<td>" +
-                        test.n2 +
-                        "</td>" +
-
-                        "<td>" +
-                        test.nvalue +
-                        "</td>" +
-
-                        '<td class="completed">' +
-                        test.status +
-                        "</td>";
-
-
-                    tableBody.appendChild(
-                        row
-                    );
-
-                }
+            throw new Error(
+                "Blynk connection error"
             );
 
         }
 
 
+        const value =
+            await response.text();
 
-        /* ==================================================
-           SAVE COMPLETED TEST
-        ================================================== */
 
-        function saveTest(
-            sptDepth,
+        return value;
+
+    }
+
+
+    catch (error) {
+
+        console.log(
+            "Blynk error:",
+            error
+        );
+
+
+        return null;
+
+    }
+
+}
+
+
+/* ===================================================== */
+/* DISPLAY HISTORY TABLE */
+/* ===================================================== */
+
+function displayTable() {
+
+
+    const tableBody =
+        document.getElementById(
+            "testTableBody"
+        );
+
+
+    tableBody.innerHTML = "";
+
+
+    if (
+        testHistory.length === 0
+    ) {
+
+        tableBody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="8"
+                    class="empty-message"
+                >
+
+                    No SPT test data available
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    testHistory.forEach(
+        function(test) {
+
+
+            const row =
+                document.createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td>${test.boreholeID}</td>
+
+                <td>${test.boreholeDepth}</td>
+
+                <td>${test.depth}</td>
+
+                <td>${test.blows}</td>
+
+                <td>${test.n1}</td>
+
+                <td>${test.n2}</td>
+
+                <td>${test.nvalue}</td>
+
+                <td>${test.status}</td>
+
+            `;
+
+
+            tableBody.appendChild(row);
+
+        }
+    );
+
+}
+
+
+/* ===================================================== */
+/* SAVE COMPLETED TEST */
+/* ===================================================== */
+
+function saveTest(
+    depth,
+    blows,
+    n1,
+    n2,
+    nvalue,
+    status
+) {
+
+
+    const newTest = {
+
+        boreholeID:
+            currentBoreholeID,
+
+        boreholeDepth:
+            currentBoreholeDepth,
+
+        depth:
+            depth,
+
+        blows:
             blows,
+
+        n1:
             n1,
+
+        n2:
             n2,
+
+        nvalue:
             nvalue,
+
+        status:
             status
+
+    };
+
+
+    /*
+        Add the new test to history.
+    */
+
+    testHistory.push(
+        newTest
+    );
+
+
+    /*
+        Save permanently
+        in browser storage.
+    */
+
+    localStorage.setItem(
+        "sptHistory",
+        JSON.stringify(testHistory)
+    );
+
+
+    /*
+        Update table.
+    */
+
+    displayTable();
+
+}
+
+
+/* ===================================================== */
+/* UPDATE LIVE DASHBOARD */
+/* ===================================================== */
+
+async function updateDashboard() {
+
+
+    const depth =
+        await getBlynkValue(0);
+
+
+    const blows =
+        await getBlynkValue(1);
+
+
+    const n1 =
+        await getBlynkValue(2);
+
+
+    const n2 =
+        await getBlynkValue(3);
+
+
+    const nvalue =
+        await getBlynkValue(4);
+
+
+    const status =
+        await getBlynkValue(5);
+
+
+    /*
+        Check Blynk connection
+    */
+
+    if (
+        depth === null &&
+        blows === null &&
+        n1 === null &&
+        n2 === null &&
+        nvalue === null &&
+        status === null
+    ) {
+
+        document.getElementById(
+            "connection"
+        ).innerText =
+            "OFFLINE";
+
+
+        document.getElementById(
+            "status"
+        ).innerText =
+            "BLYNK CONNECTION ERROR";
+
+
+        document.getElementById(
+            "status"
+        ).style.background =
+            "#f8d7da";
+
+
+        document.getElementById(
+            "status"
+        ).style.color =
+            "#721c24";
+
+
+        return;
+
+    }
+
+
+    /*
+        Blynk is connected
+    */
+
+    document.getElementById(
+        "connection"
+    ).innerText =
+        "ONLINE";
+
+
+    /* DEPTH */
+
+    if (depth !== null) {
+
+        document.getElementById(
+            "depth"
+        ).innerText =
+            depth + " cm";
+
+    }
+
+
+    /* BLOW COUNT */
+
+    if (blows !== null) {
+
+        document.getElementById(
+            "blows"
+        ).innerText =
+            blows;
+
+    }
+
+
+    /* N1 */
+
+    if (n1 !== null) {
+
+        document.getElementById(
+            "n1"
+        ).innerText =
+            n1;
+
+    }
+
+
+    /* N2 */
+
+    if (n2 !== null) {
+
+        document.getElementById(
+            "n2"
+        ).innerText =
+            n2;
+
+    }
+
+
+    /* N VALUE */
+
+    if (nvalue !== null) {
+
+        document.getElementById(
+            "nvalue"
+        ).innerText =
+            nvalue;
+
+    }
+
+
+    /* STATUS */
+
+    if (status !== null) {
+
+        document.getElementById(
+            "status"
+        ).innerText =
+            status;
+
+    }
+
+
+    /* ================================================= */
+    /* SAVE COMPLETED TEST */
+    /* ================================================= */
+
+    /*
+        VERY IMPORTANT:
+
+        The test can ONLY be saved when:
+
+        1. User clicked Start SPT Test
+        2. Blynk says TEST COMPLETED
+        3. All required values exist
+        4. This exact test was not already saved
+    */
+
+    if (
+        testStarted === true &&
+        status !== null &&
+        status
+            .toUpperCase()
+            .includes("COMPLETED")
+    ) {
+
+
+        if (
+
+            currentBoreholeID !== "" &&
+
+            currentBoreholeDepth !== "" &&
+
+            depth !== null &&
+
+            blows !== null &&
+
+            n1 !== null &&
+
+            n2 !== null &&
+
+            nvalue !== null
+
         ) {
 
 
             /*
-             * Make sure a borehole
-             * has been selected.
-             */
+                Create a unique description
+                of this completed test.
+            */
 
-            if (
-                currentBoreholeID === "" ||
-                currentBoreholeDepth === ""
-            ) {
+            const currentTest =
 
-                return;
-
-            }
-
-
-            const test = {
-
-                borehole:
-                    currentBoreholeID,
-
-                boreholeDepth:
-                    currentBoreholeDepth,
-
-                sptDepth:
-                    sptDepth,
-
-                blows:
-                    blows,
-
-                n1:
-                    n1,
-
-                n2:
-                    n2,
-
-                nvalue:
-                    nvalue,
-
-                status:
-                    status
-
-            };
+                currentBoreholeID +
+                "|" +
+                currentBoreholeDepth +
+                "|" +
+                depth +
+                "|" +
+                blows +
+                "|" +
+                n1 +
+                "|" +
+                n2 +
+                "|" +
+                nvalue;
 
 
             /*
-             * Add ONE test
-             * to history.
-             */
-
-            testHistory.push(
-                test
-            );
-
-
-            /*
-             * Save to browser.
-             */
-
-            localStorage.setItem(
-                "sptHistory",
-                JSON.stringify(
-                    testHistory
-                )
-            );
-
-
-            /*
-             * Refresh table.
-             */
-
-            displayTable();
-
-        }
-
-
-
-        /* ==================================================
-           UPDATE LIVE DASHBOARD
-        ================================================== */
-
-        async function updateDashboard() {
-
-
-            const depth =
-                await getBlynkValue(
-                    0
-                );
-
-
-            const blows =
-                await getBlynkValue(
-                    1
-                );
-
-
-            const n1 =
-                await getBlynkValue(
-                    2
-                );
-
-
-            const n2 =
-                await getBlynkValue(
-                    3
-                );
-
-
-            const nvalue =
-                await getBlynkValue(
-                    4
-                );
-
-
-            const status =
-                await getBlynkValue(
-                    5
-                );
-
-
-
-            /* ==============================================
-               CONNECTION CHECK
-            ============================================== */
+                Make sure this test
+                has not already been saved.
+            */
 
             if (
-
-                depth === null &&
-                blows === null &&
-                n1 === null &&
-                n2 === null &&
-                nvalue === null &&
-                status === null
-
-            ) {
-
-                const statusBox =
-                    document.getElementById(
-                        "status"
-                    );
-
-
-                statusBox.innerText =
-                    "BLYNK CONNECTION ERROR";
-
-
-                statusBox.style.background =
-                    "#f8d7da";
-
-
-                statusBox.style.color =
-                    "#721c24";
-
-
-                return;
-
-            }
-
-
-
-            /* ==============================================
-               DEPTH
-            ============================================== */
-
-            if (
-                depth !== null
-            ) {
-
-                document.getElementById(
-                    "depth"
-                ).innerText =
-                    depth;
-
-            }
-
-
-
-            /* ==============================================
-               BLOWS
-            ============================================== */
-
-            if (
-                blows !== null
-            ) {
-
-                document.getElementById(
-                    "blows"
-                ).innerText =
-                    blows;
-
-            }
-
-
-
-            /* ==============================================
-               N1
-            ============================================== */
-
-            if (
-                n1 !== null
-            ) {
-
-                document.getElementById(
-                    "n1"
-                ).innerText =
-                    n1;
-
-            }
-
-
-
-            /* ==============================================
-               N2
-            ============================================== */
-
-            if (
-                n2 !== null
-            ) {
-
-                document.getElementById(
-                    "n2"
-                ).innerText =
-                    n2;
-
-            }
-
-
-
-            /* ==============================================
-               N VALUE
-            ============================================== */
-
-            if (
-                nvalue !== null
-            ) {
-
-                document.getElementById(
-                    "nvalue"
-                ).innerText =
-                    nvalue;
-
-            }
-
-
-
-            /* ==============================================
-               STATUS
-            ============================================== */
-
-            if (
-                status !== null
-            ) {
-
-                const statusBox =
-                    document.getElementById(
-                        "status"
-                    );
-
-
-                statusBox.innerText =
-                    status;
-
-
-                if (
-                    status
-                        .toUpperCase()
-                        .includes(
-                            "COMPLETED"
-                        )
-                ) {
-
-                    statusBox.style.background =
-                        "#dff0d8";
-
-
-                    statusBox.style.color =
-                        "#286528";
-
-                } else {
-
-                    statusBox.style.background =
-                        "#fff3cd";
-
-
-                    statusBox.style.color =
-                        "#856404";
-
-                }
-
-            }
-
-
-
-            /* ==============================================
-               AUTOMATIC SAVE
-            ============================================== */
-
-            if (
-
-                testStarted === true &&
-
-                status !== null &&
-
-                status
-                    .toUpperCase()
-                    .includes(
-                        "COMPLETED"
-                    )
-
+                currentTest !==
+                lastSavedTest
             ) {
 
 
                 /*
-                 * Make sure all values
-                 * are available.
-                 */
+                    SAVE ONLY ONCE
+                */
 
-                if (
+                saveTest(
 
-                    currentBoreholeID !== "" &&
+                    depth,
 
-                    currentBoreholeDepth !== "" &&
+                    blows,
 
-                    depth !== null &&
+                    n1,
 
-                    blows !== null &&
+                    n2,
 
-                    n1 !== null &&
+                    nvalue,
 
-                    n2 !== null &&
+                    status
 
-                    nvalue !== null
-
-                ) {
+                );
 
 
-                    /*
-                     * Create a unique
-                     * test identification.
-                     */
+                /*
+                    Remember the saved test.
+                */
 
-                    const currentTest =
-
-                        currentBoreholeID +
-                        "|" +
-
-                        currentBoreholeDepth +
-                        "|" +
-
-                        depth +
-                        "|" +
-
-                        blows +
-                        "|" +
-
-                        n1 +
-                        "|" +
-
-                        n2 +
-                        "|" +
-
-                        nvalue;
+                lastSavedTest =
+                    currentTest;
 
 
-
-                    /*
-                     * SAVE ONLY IF THIS
-                     * TEST HAS NOT BEEN SAVED.
-                     */
-
-                    if (
-                        currentTest !==
-                        lastSavedTest
-                    ) {
+                localStorage.setItem(
+                    "lastSavedTest",
+                    currentTest
+                );
 
 
-                        saveTest(
+                /*
+                    IMPORTANT:
 
-                            depth,
+                    Lock the test.
 
-                            blows,
+                    Therefore the next 2-second
+                    Blynk update cannot save
+                    the same test again.
+                */
 
-                            n1,
-
-                            n2,
-
-                            nvalue,
-
-                            status
-
-                        );
+                testStarted = false;
 
 
-                        /*
-                         * Remember the saved test.
-                         */
-
-                        lastSavedTest =
-                            currentTest;
+                document.getElementById(
+                    "status"
+                ).innerText =
+                    "TEST COMPLETED - SAVED";
 
 
-                        localStorage.setItem(
-                            "lastSavedTest",
-                            currentTest
-                        );
+                document.getElementById(
+                    "status"
+                ).style.background =
+                    "#d4edda";
 
 
-                        /*
-                         * VERY IMPORTANT:
-                         *
-                         * Stop saving.
-                         *
-                         * The user must press
-                         * Start SPT Test again
-                         * for another row.
-                         */
-
-                        testStarted = false;
-
-
-                        /*
-                         * Show saved message.
-                         */
-
-                        const statusBox =
-                            document.getElementById(
-                                "status"
-                            );
-
-
-                        statusBox.innerText =
-                            "TEST COMPLETED - SAVED";
-
-
-                    }
-
-                }
+                document.getElementById(
+                    "status"
+                ).style.color =
+                    "#155724";
 
             }
 
         }
 
+    }
 
+}
 
-        /* ==================================================
-           DOWNLOAD CSV
-        ================================================== */
 
-        function downloadCSV() {
+/* ===================================================== */
+/* DOWNLOAD CSV / EXCEL */
+/* ===================================================== */
 
+function downloadCSV() {
 
-            if (
-                testHistory.length === 0
-            ) {
 
-                alert(
-                    "There are no completed SPT tests yet."
-                );
+    if (
+        testHistory.length === 0
+    ) {
 
-                return;
-
-            }
-
-
-            let csv =
-
-                "Bore Hole Number," +
-                "Bore Hole Depth," +
-                "SPT Depth," +
-                "Blow Count," +
-                "N1," +
-                "N2," +
-                "N Value," +
-                "Status\n";
-
-
-            testHistory.forEach(
-                function(test) {
-
-                    csv +=
-
-                        test.borehole +
-                        "," +
-
-                        test.boreholeDepth +
-                        " m," +
-
-                        test.sptDepth +
-                        " cm," +
-
-                        test.blows +
-                        "," +
-
-                        test.n1 +
-                        "," +
-
-                        test.n2 +
-                        "," +
-
-                        test.nvalue +
-                        "," +
-
-                        test.status +
-                        "\n";
-
-                }
-            );
-
-
-            const blob =
-                new Blob(
-                    [csv],
-                    {
-                        type:
-                            "text/csv;charset=utf-8;"
-                    }
-                );
-
-
-            const url =
-                URL.createObjectURL(
-                    blob
-                );
-
-
-            const link =
-                document.createElement(
-                    "a"
-                );
-
-
-            link.href =
-                url;
-
-
-            link.download =
-                "SPT_Borehole_Test_Data.csv";
-
-
-            document.body.appendChild(
-                link
-            );
-
-
-            link.click();
-
-
-            document.body.removeChild(
-                link
-            );
-
-
-            URL.revokeObjectURL(
-                url
-            );
-
-        }
-
-
-
-        /* ==================================================
-           CLEAR HISTORY
-        ================================================== */
-
-        function clearHistory() {
-
-
-            const answer =
-                confirm(
-                    "Are you sure you want to clear ALL previous SPT test data?"
-                );
-
-
-            if (
-                !answer
-            ) {
-
-                return;
-
-            }
-
-
-            /*
-             * Delete saved history.
-             */
-
-            localStorage.removeItem(
-                "sptHistory"
-            );
-
-
-            /*
-             * Delete saved test lock.
-             */
-
-            localStorage.removeItem(
-                "lastSavedTest"
-            );
-
-
-            /*
-             * Delete current borehole.
-             */
-
-            localStorage.removeItem(
-                "currentBoreholeID"
-            );
-
-
-            localStorage.removeItem(
-                "currentBoreholeDepth"
-            );
-
-
-            /*
-             * Reset variables.
-             */
-
-            testHistory = [];
-
-            lastSavedTest = "";
-
-            currentBoreholeID = "";
-
-            currentBoreholeDepth = "";
-
-            testStarted = false;
-
-
-            /*
-             * Clear input boxes.
-             */
-
-            document.getElementById(
-                "boreholeID"
-            ).value = "";
-
-
-            document.getElementById(
-                "boreholeDepth"
-            ).value = "";
-
-
-            /*
-             * Clear borehole display.
-             */
-
-            document.getElementById(
-                "currentBorehole"
-            ).innerText =
-                "No borehole selected";
-
-
-            /*
-             * Clear table.
-             */
-
-            document.getElementById(
-                "testTableBody"
-            ).innerHTML =
-                "";
-
-
-            /*
-             * Update status.
-             */
-
-            document.getElementById(
-                "status"
-            ).innerText =
-                "HISTORY CLEARED";
-
-
-            document.getElementById(
-                "status"
-            ).style.background =
-                "#f8d7da";
-
-
-            document.getElementById(
-                "status"
-            ).style.color =
-                "#721c24";
-
-
-            alert(
-                "All previous SPT test data has been cleared."
-            );
-
-        }
-
-
-
-        /* ==================================================
-           INITIAL PAGE LOAD
-        ================================================== */
-
-        displayCurrentBorehole();
-
-        displayTable();
-
-        updateDashboard();
-
-
-        /* ==================================================
-           UPDATE EVERY 2 SECONDS
-        ================================================== */
-
-        setInterval(
-            updateDashboard,
-            2000
+        alert(
+            "There is no SPT test data to download."
         );
 
-    </script>
+        return;
+
+    }
+
+
+    let csv =
+
+        "Bore Hole Number," +
+        "Bore Hole Depth," +
+        "SPT Depth," +
+        "Blow Count," +
+        "N1," +
+        "N2," +
+        "N Value," +
+        "Status\n";
+
+
+    testHistory.forEach(
+        function(test) {
+
+
+            csv +=
+
+                '"' +
+                test.boreholeID +
+                '",' +
+
+                '"' +
+                test.boreholeDepth +
+                '",' +
+
+                '"' +
+                test.depth +
+                '",' +
+
+                '"' +
+                test.blows +
+                '",' +
+
+                '"' +
+                test.n1 +
+                '",' +
+
+                '"' +
+                test.n2 +
+                '",' +
+
+                '"' +
+                test.nvalue +
+                '",' +
+
+                '"' +
+                test.status +
+                '"\n';
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "SPT_Borehole_Test_Data.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* ===================================================== */
+/* CLEAR HISTORY */
+/* ===================================================== */
+
+function clearHistory() {
+
+
+    const answer =
+        confirm(
+            "Are you sure you want to clear ALL previous SPT test data?"
+        );
+
+
+    if (!answer) {
+
+        return;
+
+    }
+
+
+    /*
+        Delete saved history.
+    */
+
+    localStorage.removeItem(
+        "sptHistory"
+    );
+
+
+    localStorage.removeItem(
+        "lastSavedTest"
+    );
+
+
+    localStorage.removeItem(
+        "currentBoreholeID"
+    );
+
+
+    localStorage.removeItem(
+        "currentBoreholeDepth"
+    );
+
+
+    /*
+        Reset variables.
+    */
+
+    testHistory = [];
+
+    lastSavedTest = "";
+
+    currentBoreholeID = "";
+
+    currentBoreholeDepth = "";
+
+    testStarted = false;
+
+
+    /*
+        Clear input fields.
+    */
+
+    document.getElementById(
+        "boreholeID"
+    ).value = "";
+
+
+    document.getElementById(
+        "boreholeDepth"
+    ).value = "";
+
+
+    /*
+        Clear current borehole.
+    */
+
+    document.getElementById(
+        "currentBorehole"
+    ).innerText =
+        "No borehole selected";
+
+
+    /*
+        Clear history table.
+    */
+
+    document.getElementById(
+        "testTableBody"
+    ).innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="8"
+                class="empty-message"
+            >
+
+                No SPT test data available
+
+            </td>
+
+        </tr>
+
+    `;
+
+
+    /*
+        Clear live values.
+    */
+
+    document.getElementById(
+        "depth"
+    ).innerText =
+        "0 cm";
+
+
+    document.getElementById(
+        "blows"
+    ).innerText =
+        "0";
+
+
+    document.getElementById(
+        "n1"
+    ).innerText =
+        "0";
+
+
+    document.getElementById(
+        "n2"
+    ).innerText =
+        "0";
+
+
+    document.getElementById(
+        "nvalue"
+    ).innerText =
+        "0";
+
+
+    document.getElementById(
+        "connection"
+    ).innerText =
+        "--";
+
+
+    /*
+        Clear status.
+    */
+
+    document.getElementById(
+        "status"
+    ).innerText =
+        "HISTORY CLEARED";
+
+
+    document.getElementById(
+        "status"
+    ).style.background =
+        "#f8d7da";
+
+
+    document.getElementById(
+        "status"
+    ).style.color =
+        "#721c24";
+
+
+    alert(
+        "All previous SPT test data has been cleared."
+    );
+
+}
+
+
+/* ===================================================== */
+/* PAGE START */
+/* ===================================================== */
+
+displayCurrentBorehole();
+
+displayTable();
+
+updateDashboard();
+
+
+/*
+    Update Blynk data every 2 seconds.
+*/
+
+setInterval(
+    updateDashboard,
+    2000
+);
+
+
+</script>
 
 </body>
 
