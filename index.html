@@ -3,10 +3,14 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Smart SPT Logger</title>
+
 
     <style>
 
@@ -17,6 +21,7 @@
             padding: 0;
         }
 
+
         header {
             background: #1f4e78;
             color: white;
@@ -24,20 +29,24 @@
             text-align: center;
         }
 
+
         header h1 {
             margin: 0;
             font-size: 28px;
         }
 
+
         header p {
             margin: 8px 0 0;
         }
+
 
         .container {
             width: 95%;
             max-width: 1200px;
             margin: 25px auto;
         }
+
 
         .section {
             background: white;
@@ -47,17 +56,20 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
+
         h2 {
             color: #1f4e78;
             margin-top: 0;
         }
 
-        /* BOREHOLE INFORMATION */
+
+        /* BOREHOLE INPUT */
 
         .input-table {
             width: 100%;
             border-collapse: collapse;
         }
+
 
         .input-table th,
         .input-table td {
@@ -66,10 +78,12 @@
             text-align: center;
         }
 
+
         .input-table th {
             background: #1f4e78;
             color: white;
         }
+
 
         input {
             width: 90%;
@@ -78,6 +92,7 @@
             border-radius: 5px;
             font-size: 15px;
         }
+
 
         /* BUTTONS */
 
@@ -90,24 +105,29 @@
             margin: 5px;
         }
 
+
         .start-btn {
             background: #28a745;
             color: white;
         }
+
 
         .download-btn {
             background: #007bff;
             color: white;
         }
 
+
         .clear-btn {
             background: #dc3545;
             color: white;
         }
 
+
         button:hover {
             opacity: 0.85;
         }
+
 
         /* CURRENT BOREHOLE */
 
@@ -119,13 +139,15 @@
             font-weight: bold;
         }
 
-        /* LIVE DASHBOARD */
+
+        /* DASHBOARD */
 
         .dashboard {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
         }
+
 
         .card {
             background: #f8f9fa;
@@ -135,11 +157,13 @@
             text-align: center;
         }
 
+
         .card h3 {
             margin: 0;
             color: #555;
             font-size: 16px;
         }
+
 
         .value {
             font-size: 30px;
@@ -147,6 +171,7 @@
             margin-top: 10px;
             color: #1f4e78;
         }
+
 
         /* STATUS */
 
@@ -160,17 +185,20 @@
             margin-top: 20px;
         }
 
-        /* HISTORY TABLE */
+
+        /* HISTORY */
 
         .history-container {
             overflow-x: auto;
         }
+
 
         .history-table {
             width: 100%;
             border-collapse: collapse;
             min-width: 900px;
         }
+
 
         .history-table th,
         .history-table td {
@@ -179,14 +207,17 @@
             text-align: center;
         }
 
+
         .history-table th {
             background: #1f4e78;
             color: white;
         }
 
+
         .history-table tr:nth-child(even) {
             background: #f2f2f2;
         }
+
 
         .empty-message {
             text-align: center;
@@ -194,11 +225,13 @@
             color: #777;
         }
 
+
         footer {
             text-align: center;
             padding: 20px;
             color: #666;
         }
+
 
         @media (max-width: 700px) {
 
@@ -216,7 +249,9 @@
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -229,16 +264,18 @@
 </header>
 
 
+
 <div class="container">
 
 
-    <!-- ================================================= -->
+    <!-- ============================================= -->
     <!-- BOREHOLE INFORMATION -->
-    <!-- ================================================= -->
+    <!-- ============================================= -->
 
     <div class="section">
 
         <h2>Bore Hole Information</h2>
+
 
         <table class="input-table">
 
@@ -252,6 +289,7 @@
 
             </tr>
 
+
             <tr>
 
                 <td>
@@ -264,6 +302,7 @@
 
                 </td>
 
+
                 <td>
 
                     <input
@@ -273,6 +312,7 @@
                     >
 
                 </td>
+
 
                 <td>
 
@@ -294,13 +334,15 @@
     </div>
 
 
-    <!-- ================================================= -->
+
+    <!-- ============================================= -->
     <!-- CURRENT BOREHOLE -->
-    <!-- ================================================= -->
+    <!-- ============================================= -->
 
     <div class="section">
 
         <h2>Current Bore Hole</h2>
+
 
         <div
             class="current-borehole"
@@ -314,13 +356,15 @@
     </div>
 
 
-    <!-- ================================================= -->
-    <!-- LIVE SPT RESULTS -->
-    <!-- ================================================= -->
+
+    <!-- ============================================= -->
+    <!-- LIVE RESULTS -->
+    <!-- ============================================= -->
 
     <div class="section">
 
         <h2>Live SPT Test Results</h2>
+
 
         <div class="dashboard">
 
@@ -333,12 +377,11 @@
                     class="value"
                     id="depth"
                 >
-
                     0 cm
-
                 </div>
 
             </div>
+
 
 
             <div class="card">
@@ -349,12 +392,11 @@
                     class="value"
                     id="blows"
                 >
-
                     0
-
                 </div>
 
             </div>
+
 
 
             <div class="card">
@@ -365,12 +407,11 @@
                     class="value"
                     id="n1"
                 >
-
                     0
-
                 </div>
 
             </div>
+
 
 
             <div class="card">
@@ -381,12 +422,11 @@
                     class="value"
                     id="n2"
                 >
-
                     0
-
                 </div>
 
             </div>
+
 
 
             <div class="card">
@@ -397,12 +437,11 @@
                     class="value"
                     id="nvalue"
                 >
-
                     0
-
                 </div>
 
             </div>
+
 
 
             <div class="card">
@@ -413,15 +452,13 @@
                     class="value"
                     id="connection"
                 >
-
                     --
-
                 </div>
 
             </div>
 
-
         </div>
+
 
 
         <div id="status">
@@ -433,17 +470,21 @@
     </div>
 
 
-    <!-- ================================================= -->
-    <!-- SPT TEST HISTORY -->
-    <!-- ================================================= -->
+
+    <!-- ============================================= -->
+    <!-- HISTORY -->
+    <!-- ============================================= -->
 
     <div class="section">
 
         <h2>SPT Test History</h2>
 
+
         <div class="history-container">
 
+
             <table class="history-table">
+
 
                 <thead>
 
@@ -469,9 +510,11 @@
 
                 </thead>
 
+
                 <tbody id="testTableBody">
 
                 </tbody>
+
 
             </table>
 
@@ -506,11 +549,13 @@
 </div>
 
 
+
 <footer>
 
     Smart SPT Logger | Mining Engineering Project
 
 </footer>
+
 
 
 <script>
@@ -520,6 +565,13 @@
 /* BLYNK SETTINGS */
 /* ===================================================== */
 
+
+/*
+    IMPORTANT:
+
+    KEEP YOUR EXISTING BLYNK AUTH TOKEN HERE.
+*/
+
 const BLYNK_TOKEN =
     "txBNNxiUObwcaQVm-tDkDCBwLZDa2oKI";
 
@@ -528,9 +580,11 @@ const BLYNK_SERVER =
     "https://blynk.cloud/external/api/get";
 
 
+
 /* ===================================================== */
 /* VARIABLES */
 /* ===================================================== */
+
 
 let currentBoreholeID =
     localStorage.getItem("currentBoreholeID") || "";
@@ -551,34 +605,48 @@ let lastSavedTest =
 
 
 /*
-    IMPORTANT
+    testStarted
 
-    This variable tells the webpage:
-
-    "The user has actually clicked
-     Start SPT Test."
-
-    Therefore an old TEST COMPLETED value
-    will NOT automatically be saved.
+    TRUE = user clicked Start SPT Test
 */
 
 let testStarted = false;
+
+
+/*
+    testActuallyRunning
+
+    FALSE = test has not really started
+
+    TRUE = Blynk has reported RUNNING
+
+    We only allow TEST COMPLETED
+    to be saved after RUNNING was detected.
+*/
+
+let testActuallyRunning = false;
+
 
 
 /* ===================================================== */
 /* DISPLAY CURRENT BOREHOLE */
 /* ===================================================== */
 
+
 function displayCurrentBorehole() {
 
+
     const display =
-        document.getElementById("currentBorehole");
+        document.getElementById(
+            "currentBorehole"
+        );
 
 
     if (
         currentBoreholeID !== "" &&
         currentBoreholeDepth !== ""
     ) {
+
 
         display.innerText =
             currentBoreholeID +
@@ -587,7 +655,9 @@ function displayCurrentBorehole() {
 
     }
 
+
     else {
+
 
         display.innerText =
             "No borehole selected";
@@ -597,9 +667,11 @@ function displayCurrentBorehole() {
 }
 
 
+
 /* ===================================================== */
-/* START NEW SPT TEST */
+/* START NEW TEST */
 /* ===================================================== */
+
 
 function startTest() {
 
@@ -618,24 +690,29 @@ function startTest() {
         .trim();
 
 
-    /* CHECK INPUT */
+    /*
+        CHECK INPUT
+    */
 
     if (
         boreholeID === "" ||
         boreholeDepth === ""
     ) {
 
+
         alert(
             "Please enter Bore Hole ID and Bore Hole Depth."
         );
+
 
         return;
 
     }
 
 
+
     /*
-        SAVE NEW BOREHOLE INFORMATION
+        SAVE NEW BOREHOLE
     */
 
     currentBoreholeID =
@@ -644,6 +721,7 @@ function startTest() {
 
     currentBoreholeDepth =
         boreholeDepth;
+
 
 
     localStorage.setItem(
@@ -658,18 +736,30 @@ function startTest() {
     );
 
 
-    /*
-        VERY IMPORTANT:
 
-        Start a completely NEW test.
+    /*
+        NEW TEST STARTED
     */
 
     testStarted = true;
 
 
     /*
-        Remove old duplicate protection
-        because this is a new test.
+        VERY IMPORTANT:
+
+        The test has NOT actually started yet.
+
+        We wait for Blynk to say RUNNING.
+    */
+
+    testActuallyRunning = false;
+
+
+
+    /*
+        Remove previous duplicate marker.
+
+        This does NOT save anything.
     */
 
     lastSavedTest = "";
@@ -680,74 +770,90 @@ function startTest() {
     );
 
 
+
     /*
-        Display new borehole
+        SHOW NEW BOREHOLE
     */
 
     displayCurrentBorehole();
 
 
-    /*
-        Clear the old LIVE SCREEN.
 
-        This does NOT change Blynk.
-        It only clears the webpage display
-        until new values arrive.
+    /*
+        CLEAR OLD WEBPAGE VALUES
     */
 
-    document.getElementById("depth")
-        .innerText = "0 cm";
+    document.getElementById(
+        "depth"
+    ).innerText =
+        "0 cm";
 
 
-    document.getElementById("blows")
-        .innerText = "0";
+    document.getElementById(
+        "blows"
+    ).innerText =
+        "0";
 
 
-    document.getElementById("n1")
-        .innerText = "0";
+    document.getElementById(
+        "n1"
+    ).innerText =
+        "0";
 
 
-    document.getElementById("n2")
-        .innerText = "0";
+    document.getElementById(
+        "n2"
+    ).innerText =
+        "0";
 
 
-    document.getElementById("nvalue")
-        .innerText = "0";
+    document.getElementById(
+        "nvalue"
+    ).innerText =
+        "0";
 
 
-    document.getElementById("connection")
-        .innerText = "CONNECTING";
+    document.getElementById(
+        "connection"
+    ).innerText =
+        "WAITING";
+
 
 
     /*
         IMPORTANT:
 
-        We do NOT save anything here.
+        If Blynk is currently TEST COMPLETED,
+        we DO NOT save it.
 
-        The test will only be saved when
-        Blynk reports TEST COMPLETED.
+        We wait for RUNNING first.
     */
 
-    document.getElementById("status")
-        .innerText =
-        "NEW SPT TEST STARTED - WAITING FOR DATA";
+    document.getElementById(
+        "status"
+    ).innerText =
+        "WAITING FOR SPT TO START";
 
 
-    document.getElementById("status")
-        .style.background =
-        "#d4edda";
+    document.getElementById(
+        "status"
+    ).style.background =
+        "#fff3cd";
 
 
-    document.getElementById("status")
-        .style.color =
-        "#155724";
+    document.getElementById(
+        "status"
+    ).style.color =
+        "#856404";
 
 }
+
 
 
 /* ===================================================== */
 /* GET BLYNK VALUE */
 /* ===================================================== */
+
 
 async function getBlynkValue(pin) {
 
@@ -761,6 +867,7 @@ async function getBlynkValue(pin) {
 
 
     try {
+
 
         const response =
             await fetch(url);
@@ -786,6 +893,7 @@ async function getBlynkValue(pin) {
 
     catch (error) {
 
+
         console.log(
             "Blynk error:",
             error
@@ -799,9 +907,11 @@ async function getBlynkValue(pin) {
 }
 
 
+
 /* ===================================================== */
 /* DISPLAY HISTORY TABLE */
 /* ===================================================== */
+
 
 function displayTable() {
 
@@ -815,9 +925,11 @@ function displayTable() {
     tableBody.innerHTML = "";
 
 
+
     if (
         testHistory.length === 0
     ) {
+
 
         tableBody.innerHTML = `
 
@@ -836,9 +948,11 @@ function displayTable() {
 
         `;
 
+
         return;
 
     }
+
 
 
     testHistory.forEach(
@@ -878,9 +992,11 @@ function displayTable() {
 }
 
 
+
 /* ===================================================== */
-/* SAVE COMPLETED TEST */
+/* SAVE TEST */
 /* ===================================================== */
+
 
 function saveTest(
     depth,
@@ -894,26 +1010,34 @@ function saveTest(
 
     const newTest = {
 
+
         boreholeID:
             currentBoreholeID,
+
 
         boreholeDepth:
             currentBoreholeDepth,
 
+
         depth:
             depth,
+
 
         blows:
             blows,
 
+
         n1:
             n1,
+
 
         n2:
             n2,
 
+
         nvalue:
             nvalue,
+
 
         status:
             status
@@ -921,8 +1045,9 @@ function saveTest(
     };
 
 
+
     /*
-        Add the new test to history.
+        ADD ONE TEST
     */
 
     testHistory.push(
@@ -930,9 +1055,9 @@ function saveTest(
     );
 
 
+
     /*
-        Save permanently
-        in browser storage.
+        SAVE TO BROWSER
     */
 
     localStorage.setItem(
@@ -941,8 +1066,9 @@ function saveTest(
     );
 
 
+
     /*
-        Update table.
+        UPDATE TABLE
     */
 
     displayTable();
@@ -950,12 +1076,18 @@ function saveTest(
 }
 
 
+
 /* ===================================================== */
-/* UPDATE LIVE DASHBOARD */
+/* UPDATE DASHBOARD */
 /* ===================================================== */
+
 
 async function updateDashboard() {
 
+
+    /*
+        GET ALL BLYNK VALUES
+    */
 
     const depth =
         await getBlynkValue(0);
@@ -981,18 +1113,28 @@ async function updateDashboard() {
         await getBlynkValue(5);
 
 
-    /*
-        Check Blynk connection
-    */
+
+    /* ================================================= */
+    /* CONNECTION CHECK */
+    /* ================================================= */
+
 
     if (
+
         depth === null &&
+
         blows === null &&
+
         n1 === null &&
+
         n2 === null &&
+
         nvalue === null &&
+
         status === null
+
     ) {
+
 
         document.getElementById(
             "connection"
@@ -1000,31 +1142,14 @@ async function updateDashboard() {
             "OFFLINE";
 
 
-        document.getElementById(
-            "status"
-        ).innerText =
-            "BLYNK CONNECTION ERROR";
-
-
-        document.getElementById(
-            "status"
-        ).style.background =
-            "#f8d7da";
-
-
-        document.getElementById(
-            "status"
-        ).style.color =
-            "#721c24";
-
-
         return;
 
     }
 
 
+
     /*
-        Blynk is connected
+        BLYNK ONLINE
     */
 
     document.getElementById(
@@ -1033,9 +1158,14 @@ async function updateDashboard() {
         "ONLINE";
 
 
-    /* DEPTH */
+
+    /* ================================================= */
+    /* UPDATE VALUES */
+    /* ================================================= */
+
 
     if (depth !== null) {
+
 
         document.getElementById(
             "depth"
@@ -1045,9 +1175,9 @@ async function updateDashboard() {
     }
 
 
-    /* BLOW COUNT */
 
     if (blows !== null) {
+
 
         document.getElementById(
             "blows"
@@ -1057,9 +1187,9 @@ async function updateDashboard() {
     }
 
 
-    /* N1 */
 
     if (n1 !== null) {
+
 
         document.getElementById(
             "n1"
@@ -1069,9 +1199,9 @@ async function updateDashboard() {
     }
 
 
-    /* N2 */
 
     if (n2 !== null) {
+
 
         document.getElementById(
             "n2"
@@ -1081,9 +1211,9 @@ async function updateDashboard() {
     }
 
 
-    /* N VALUE */
 
     if (nvalue !== null) {
+
 
         document.getElementById(
             "nvalue"
@@ -1093,41 +1223,120 @@ async function updateDashboard() {
     }
 
 
-    /* STATUS */
 
     if (status !== null) {
 
-        document.getElementById(
-            "status"
-        ).innerText =
-            status;
+
+        /*
+            IMPORTANT:
+
+            Do not automatically display
+            TEST COMPLETED as a new test.
+        */
+
+        if (
+            testStarted === true &&
+            testActuallyRunning === false &&
+            status
+                .toUpperCase()
+                .includes("COMPLETED")
+        ) {
+
+
+            document.getElementById(
+                "status"
+            ).innerText =
+                "WAITING FOR NEW TEST";
+
+
+        }
+
+
+        else {
+
+
+            document.getElementById(
+                "status"
+            ).innerText =
+                status;
+
+        }
 
     }
 
 
+
     /* ================================================= */
-    /* SAVE COMPLETED TEST */
+    /* DETECT REAL TEST START */
     /* ================================================= */
 
-    /*
-        VERY IMPORTANT:
-
-        The test can ONLY be saved when:
-
-        1. User clicked Start SPT Test
-        2. Blynk says TEST COMPLETED
-        3. All required values exist
-        4. This exact test was not already saved
-    */
 
     if (
+
         testStarted === true &&
+
         status !== null &&
+
+        status
+            .toUpperCase()
+            .includes("RUNNING")
+
+    ) {
+
+
+        /*
+            NOW we know the test
+            actually started.
+        */
+
+        testActuallyRunning = true;
+
+
+
+        document.getElementById(
+            "status"
+        ).innerText =
+            "SPT TEST RUNNING";
+
+
+        document.getElementById(
+            "status"
+        ).style.background =
+            "#d4edda";
+
+
+        document.getElementById(
+            "status"
+        ).style.color =
+            "#155724";
+
+    }
+
+
+
+    /* ================================================= */
+    /* SAVE ONLY AFTER RUNNING */
+    /* ================================================= */
+
+
+    if (
+
+        testStarted === true &&
+
+        testActuallyRunning === true &&
+
+        status !== null &&
+
         status
             .toUpperCase()
             .includes("COMPLETED")
+
     ) {
 
+
+        /*
+            CHECK ALL VALUES
+        */
 
         if (
 
@@ -1149,8 +1358,7 @@ async function updateDashboard() {
 
 
             /*
-                Create a unique description
-                of this completed test.
+                UNIQUE TEST IDENTIFIER
             */
 
             const currentTest =
@@ -1170,9 +1378,9 @@ async function updateDashboard() {
                 nvalue;
 
 
+
             /*
-                Make sure this test
-                has not already been saved.
+                SAVE ONLY ONCE
             */
 
             if (
@@ -1180,10 +1388,6 @@ async function updateDashboard() {
                 lastSavedTest
             ) {
 
-
-                /*
-                    SAVE ONLY ONCE
-                */
 
                 saveTest(
 
@@ -1202,8 +1406,9 @@ async function updateDashboard() {
                 );
 
 
+
                 /*
-                    Remember the saved test.
+                    REMEMBER TEST
                 */
 
                 lastSavedTest =
@@ -1216,17 +1421,18 @@ async function updateDashboard() {
                 );
 
 
+
                 /*
-                    IMPORTANT:
+                    TEST FINISHED
 
-                    Lock the test.
-
-                    Therefore the next 2-second
-                    Blynk update cannot save
-                    the same test again.
+                    Lock saving until the
+                    user starts another test.
                 */
 
                 testStarted = false;
+
+                testActuallyRunning = false;
+
 
 
                 document.getElementById(
@@ -1255,9 +1461,11 @@ async function updateDashboard() {
 }
 
 
+
 /* ===================================================== */
-/* DOWNLOAD CSV / EXCEL */
+/* DOWNLOAD CSV */
 /* ===================================================== */
+
 
 function downloadCSV() {
 
@@ -1266,13 +1474,16 @@ function downloadCSV() {
         testHistory.length === 0
     ) {
 
+
         alert(
             "There is no SPT test data to download."
         );
 
+
         return;
 
     }
+
 
 
     let csv =
@@ -1285,6 +1496,7 @@ function downloadCSV() {
         "N2," +
         "N Value," +
         "Status\n";
+
 
 
     testHistory.forEach(
@@ -1329,6 +1541,7 @@ function downloadCSV() {
     );
 
 
+
     const blob =
         new Blob(
             [csv],
@@ -1339,8 +1552,10 @@ function downloadCSV() {
         );
 
 
+
     const url =
         URL.createObjectURL(blob);
+
 
 
     const link =
@@ -1368,9 +1583,11 @@ function downloadCSV() {
 }
 
 
+
 /* ===================================================== */
 /* CLEAR HISTORY */
 /* ===================================================== */
+
 
 function clearHistory() {
 
@@ -1388,8 +1605,9 @@ function clearHistory() {
     }
 
 
+
     /*
-        Delete saved history.
+        REMOVE SAVED DATA
     */
 
     localStorage.removeItem(
@@ -1412,8 +1630,9 @@ function clearHistory() {
     );
 
 
+
     /*
-        Reset variables.
+        RESET VARIABLES
     */
 
     testHistory = [];
@@ -1426,9 +1645,12 @@ function clearHistory() {
 
     testStarted = false;
 
+    testActuallyRunning = false;
+
+
 
     /*
-        Clear input fields.
+        CLEAR INPUTS
     */
 
     document.getElementById(
@@ -1441,8 +1663,9 @@ function clearHistory() {
     ).value = "";
 
 
+
     /*
-        Clear current borehole.
+        CLEAR CURRENT BOREHOLE
     */
 
     document.getElementById(
@@ -1451,8 +1674,9 @@ function clearHistory() {
         "No borehole selected";
 
 
+
     /*
-        Clear history table.
+        CLEAR TABLE
     */
 
     document.getElementById(
@@ -1475,8 +1699,9 @@ function clearHistory() {
     `;
 
 
+
     /*
-        Clear live values.
+        CLEAR LIVE DATA
     */
 
     document.getElementById(
@@ -1515,8 +1740,9 @@ function clearHistory() {
         "--";
 
 
+
     /*
-        Clear status.
+        STATUS
     */
 
     document.getElementById(
@@ -1537,6 +1763,7 @@ function clearHistory() {
         "#721c24";
 
 
+
     alert(
         "All previous SPT test data has been cleared."
     );
@@ -1544,19 +1771,24 @@ function clearHistory() {
 }
 
 
+
 /* ===================================================== */
-/* PAGE START */
+/* PAGE LOAD */
 /* ===================================================== */
+
 
 displayCurrentBorehole();
 
+
 displayTable();
+
 
 updateDashboard();
 
 
+
 /*
-    Update Blynk data every 2 seconds.
+    UPDATE EVERY 2 SECONDS
 */
 
 setInterval(
@@ -1566,6 +1798,7 @@ setInterval(
 
 
 </script>
+
 
 </body>
 
